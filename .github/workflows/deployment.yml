@@ -50,4 +50,4 @@ jobs:
           uses: ./.github/actions/push-docker-image
           with:
             image_name: 774305578623.dkr.ecr.ap-southeast-1.amazonaws.com/ui-service-luan
-            tag: devS
+            tag: dev
