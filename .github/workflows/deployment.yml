@@ -43,11 +43,11 @@ jobs:
         - name: Build Docker Image
           uses: ./.github/actions/build-docker-image
           with:
-            image_name: 774305578623.dkr.ecr.ap-southeast-1.amazonaws.com/ui-service
+            image_name: 774305578623.dkr.ecr.ap-southeast-1.amazonaws.com/ui-service-luan
             tag: dev
 
         - name: Push Docker Image
           uses: ./.github/actions/push-docker-image
           with:
-            image_name: 774305578623.dkr.ecr.ap-southeast-1.amazonaws.com/ui-service
+            image_name: 774305578623.dkr.ecr.ap-southeast-1.amazonaws.com/ui-service-luan
             tag: devS
