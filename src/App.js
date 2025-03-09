@@ -12,6 +12,7 @@ function App() {
       .then(setMetrics)
       .catch(console.error);
 
+      
     fetch('http://api-service.default.svc.cluster.local/api/deployments')
       .then(res => res.json())
       .then(setDeployments)
