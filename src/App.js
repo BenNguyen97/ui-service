@@ -7,13 +7,13 @@ function App() {
 
   // cap nhat code tu localhost:8000 sang api-service.default.svc.cluster.local
   useEffect(() => {
-    fetch('http://api-service.default.svc.cluster.local/api/metrics') 
+    fetch('http://api-gateway.default.svc.cluster.local/api/metrics') 
       .then(res => res.text())
       .then(setMetrics)
       .catch(console.error);
 
       
-    fetch('http://api-service.default.svc.cluster.local/api/deployments')
+    fetch('http://api-gateway.default.svc.cluster.local/api/deployments')
       .then(res => res.json())
       .then(setDeployments)
       .catch(console.error);
