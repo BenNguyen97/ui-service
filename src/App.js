@@ -5,13 +5,14 @@ function App() {
   const [metrics, setMetrics] = useState('');
   const [deployments, setDeployments] = useState([]);
 
+  // cap nhat code tu localhost:8000 sang api-service.default.svc.cluster.local
   useEffect(() => {
-    fetch('http://localhost:8080/api/metrics')
+    fetch('http://api-service.default.svc.cluster.local/api/metrics') 
       .then(res => res.text())
       .then(setMetrics)
       .catch(console.error);
 
-    fetch('http://localhost:8080/api/deployments')
+    fetch('http://api-service.default.svc.cluster.local/api/deployments')
       .then(res => res.json())
       .then(setDeployments)
       .catch(console.error);
