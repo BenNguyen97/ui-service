@@ -5,7 +5,7 @@ function App() {
   const [metrics, setMetrics] = useState('');
   const [deployments, setDeployments] = useState([]);
 
-  // cap nhat code tu localhost:8000 sang api-service.default.svc.cluster.local
+  // cap nhat code tu localhost:8000 sang api-gateway.default.svc.cluster.local
   useEffect(() => {
     fetch('http://api-gateway.default.svc.cluster.local/api/metrics') 
       .then(res => res.text())
