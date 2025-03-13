@@ -11,7 +11,8 @@ spec:
     - port: 3000
       protocol: TCP
       targetPort: 80
-  type: LoadBalancer
+  # type: LoadBalancer
+  type: ClusterIP
 
 ---
 apiVersion: apps/v1
@@ -24,7 +25,7 @@ spec:
   selector:
     matchLabels:
       app: ui-service
-  stategy:
+  strategy:
     type: Recreate
   template:
     metadata:
@@ -34,11 +35,13 @@ spec:
     spec:
       serviceAccountName: default
       containers:
-        - images: 774305578623.dkr.ecr.ap-southeast-1.amazonaws.com/ui-service-luan:dev
+        - image: 774305578623.dkr.ecr.ap-southeast-1.amazonaws.com/ui-service-luan:dev
           name: ui-service
           imagePullPolicy: Always
           ports:
             - containerPort: 80
               name: ui-service
+
+
 
  
